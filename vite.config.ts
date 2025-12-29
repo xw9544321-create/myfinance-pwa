@@ -19,14 +19,15 @@ export default defineConfig({
     VitePWA({
       // 1. 配置 Web App Manifest（桌面图标、应用名称等，PWA 必备）
       manifest: {
-        name: '金融账单管理', // 应用名称（对应你的页面功能）
-        short_name: '金融账单', // 短名称（桌面图标下方显示）
-        description: '金融类前端页面，支持离线访问', // 应用描述
-        display: 'standalone', // 独立窗口运行（类似原生 App 体验）
-        background_color: '#ffffff', // 启动页背景色
-        theme_color: '#006644', // 主题色（匹配图中深绿色）
+        name: '金融账单管理',
+        short_name: '金融账单',
+        description: '金融类前端页面，支持离线访问',
+        display: 'standalone',
+        start_url: './',
+        scope: './',
+        background_color: '#ffffff',
+        theme_color: '#006644',
         icons: [
-          // 桌面图标
           {
             src: 'icons/icon1.png',
             sizes: '192x192',
@@ -35,7 +36,8 @@ export default defineConfig({
           {
             src: 'icons/icon2.png',
             sizes: '512x512',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any maskable'
           }
         ]
       },
