@@ -8,6 +8,7 @@ import { VantResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/myfinance-pwa/',
   plugins: [
     vue(),
     // 按需引入 Vant 组件
