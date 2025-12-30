@@ -8,7 +8,7 @@ import { VantResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/myfinance-pwa/',
+  base: process.env.NODE_ENV === 'production' ? '/myfinance-pwa/' : '/',
   plugins: [
     vue(),
     // 按需引入 Vant 组件
@@ -31,13 +31,40 @@ export default defineConfig({
           {
             src: 'icons/icon1.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
+            purpose: 'any'
+          },
+          {
+            src: 'icons/icon1.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'maskable'
           },
           {
             src: 'icons/icon2.png',
             sizes: '512x512',
             type: 'image/png',
-            purpose: 'any maskable'
+            purpose: 'any'
+          },
+          {
+            src: 'icons/icon2.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
+          }
+        ],
+        screenshots: [
+          {
+            src: 'screenshots/desktop.png',
+            sizes: '1280x720',
+            type: 'image/png',
+            form_factor: 'wide' // 桌面端
+          },
+          {
+            src: 'screenshots/mobile.png',
+            sizes: '375x667',
+            type: 'image/png',
+            form_factor: 'narrow' // 移动端
           }
         ]
       },
